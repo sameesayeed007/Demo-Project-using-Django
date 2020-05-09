@@ -1,0 +1,14 @@
+{% extends 'first_app/base.html' %}
+  {% block body_block %}
+   <h3>Musicians</h3>
+   <ul>
+   	{% if musician_list %}
+   	{% for musician in musician_list %}
+   	<li class="w3-ul w3-card-4 w3-xlarge" style="width:50%"><a href="{% url 'first_app:album_list' artist_id=musician.id %}">{{musician.first_name}} {{musician.last_name}}</a></li>
+
+   	{% endfor %}
+   	{% else %}
+   	<h4>No Musicians</h4>
+   	{% endif %}
+   </ul>
+  {% endblock %}
