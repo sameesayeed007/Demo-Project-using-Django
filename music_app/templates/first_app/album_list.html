@@ -4,18 +4,21 @@
    <h2>Artist: {{artist_info.first_name}} {{artist_info.last_name}}</h2>
    <h2>Instrument: {{artist_info.instrument}}</h2>
    <h2>Rating: {{artist_rating.num_stars__avg}}</h2><br>
+   <a href="{% url 'first_app:edit_artist' artist_id=artist_info.id %}" class="w3-button w3-black w3-round-large">Edit Artist Information</a>
    <h3>List of albums</h3><br>
    <table class="w3-table-all w3-large">
    	<tr>
-   		<th>Album Name</th>
+   		<th>Album Name</th> 
    		<th>Release Date</th>
    		<th>Ratings</th>
+         \
    	</tr>
    	{% for album in album_list %}
    	<tr>
-   		<td>{{ album.name }}</td>
+   		<td><a href="{% url 'first_app:edit_album' album_id=album.id artist_id=artist_info.id %}">{{ album.name }}</a></td>
    		<td>{{ album.release_date }}</td>
    		<td>{{ album.num_stars }}</td>
+         
    	</tr>
    	{% endfor %}
    </table>

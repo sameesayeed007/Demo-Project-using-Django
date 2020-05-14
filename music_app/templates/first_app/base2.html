@@ -1,4 +1,5 @@
-<html>
+{% load static %}
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
@@ -6,6 +7,8 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+
+ 
 }
 
 .topnav {
@@ -31,6 +34,7 @@ body {
   background-color: #4CAF50;
   color: white;
 }
+
 .container{
 
   position: absolute;
@@ -39,17 +43,28 @@ body {
   width: 60%;
   
 }
+
 </style>
 </head>
 <body>
 
 <div class="topnav">
-  <a href="{% url 'first_app:first' %}">List of Musicians</a>
+
+  <a href="{% url 'first_app:index' %}">Home</a>
+ 
+  
+  <a href="#profile">Profile</a>
   <a href="{% url 'first_app:musician_form' %}">Add Musician</a>
   <a href="{% url 'first_app:album_form' %}">Add Album</a>
   <a href="{% url 'first_app:user_logout' %}">Logout</a>
+
+  <a href="{% url 'first_app:register' %}">Register</a>
+  <a href="{% url 'first_app:login_1' %}">Login</a>
+  
+ 
  
 </div>
+
 
 <div class="container">
   {% block body_block %}
@@ -57,6 +72,8 @@ body {
   {% endblock %}
   
 </div>
+  
+
 
 </body>
 </html>

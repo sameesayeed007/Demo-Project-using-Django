@@ -1,0 +1,25 @@
+{% extends 'first_app/base3.html' %}
+{% load static %}
+
+  {% block body_block %}
+
+  {% if registered %}
+  <div class="w3-panel w3-green">
+  	 <h3>Your registration has been successful!</h3>
+  </div>
+
+  {% else %}
+  
+  <form enctype="multipart/form-data" method = "POST">
+  	{{user_form.as_p}}
+  	{{user_info_form.as_p}}
+   	{% csrf_token %}
+   	<input type="submit" name="submit" value="Register" class="w3-button w3-black">
+  	
+  </form>
+
+  {% endif %}
+
+
+
+  {% endblock %}

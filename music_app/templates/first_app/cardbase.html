@@ -2,6 +2,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
   margin: 0;
@@ -31,11 +32,18 @@ body {
   background-color: #4CAF50;
   color: white;
 }
+.card {
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
 .container{
 
   position: absolute;
-  left: 10%;
-  top: 10%;
+  left: 20%;
+  top: 20%;
   width: 60%;
   
 }
@@ -44,19 +52,20 @@ body {
 <body>
 
 <div class="topnav">
-  <a href="{% url 'first_app:first' %}">List of Musicians</a>
+  <a href="{% url 'first_app:profile' %}">Profile</a>
   <a href="{% url 'first_app:musician_form' %}">Add Musician</a>
   <a href="{% url 'first_app:album_form' %}">Add Album</a>
   <a href="{% url 'first_app:user_logout' %}">Logout</a>
  
 </div>
-
 <div class="container">
+<div class="card">
   {% block body_block %}
 
   {% endblock %}
   
 </div>
+</div>
 
-</body>
+</body>= 
 </html>
